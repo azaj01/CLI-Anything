@@ -14,7 +14,8 @@ Adding a new CLI harness is the most impactful contribution. Before submitting a
 2. **`SKILL.md`** — the AI-discoverable skill definition exists inside the Python package at `cli_anything/<software>/SKILL.md`.
 3. **Tests** — unit tests (`test_core.py`, passable without backend) and E2E tests (`test_full_e2e.py`) are present and passing.
 4. **`README.md`** — the project README includes the new software with a link to its harness directory.
-5. **`repl_skin.py`** — an unmodified copy from the plugin exists in `utils/`.
+5. **`registry.json`** — add an entry for the new software so it appears on the [CLI-Hub](https://hkuds.github.io/CLI-Anything/hub/).
+6. **`repl_skin.py`** — an unmodified copy from the plugin exists in `utils/`.
 
 ### B) New Features
 
@@ -31,6 +32,36 @@ Bug fixes resolve incorrect behavior in existing harnesses or the plugin.
 - Reference the related issue in your PR (e.g., `Fixes #123`).
 - Include a test that reproduces the bug and verifies the fix.
 - Ensure all existing tests for the affected harness still pass.
+
+## CLI-Hub & Registry
+
+All available CLIs are listed in `registry.json` at the repo root and displayed on the [CLI-Hub](https://hkuds.github.io/CLI-Anything/hub/). The hub reads `registry.json` directly from `main`, so it updates immediately when a PR is merged.
+
+### Adding a new CLI to the Hub
+
+Include an entry in `registry.json` as part of your PR. Each entry has this shape:
+
+```json
+{
+  "name": "my-software",
+  "display_name": "My Software",
+  "version": "1.0.0",
+  "description": "Short description of what the CLI does",
+  "requires": "backend software or null",
+  "install_cmd": "pip install git+https://github.com/HKUDS/CLI-Anything.git#subdirectory=my-software/agent-harness",
+  "entry_point": "cli-anything-my-software",
+  "skill_md": "my-software/agent-harness/cli_anything/my_software/skills/SKILL.md",
+  "category": "category-name"
+}
+```
+
+### Updating an existing CLI on the Hub
+
+When you modify an existing harness, update its `registry.json` entry in the same PR:
+
+- Bump the `version` field to reflect the change.
+- Update `description`, `requires`, or `category` if they changed.
+- The hub will reflect the update as soon as the PR is merged to `main`.
 
 ## Development Setup
 

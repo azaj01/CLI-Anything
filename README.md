@@ -42,7 +42,6 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 > Thanks to all invaluable efforts from the community! More updates continuously on the way everyday..
 
 - **2026-03-18** 🧠 Added an **experimental NotebookLM harness scaffold** from the community. It wraps the installed `notebooklm` CLI for notebook discovery, source management, chat, artifact workflows, downloads, and sharing while preserving a clear experimental/community-maintained boundary.
-
 - **2026-03-17** 🌐 Launched the **[CLI-Hub](https://hkuds.github.io/CLI-Anything/hub/)** — a central registry where you can browse, search, and install any CLI with a single `pip` command. Contributors can add new CLIs or update existing ones by simply opening a PR with a `registry.json` entry. The hub updates automatically on merge.
 
 - **2026-03-16** 🤖 Added **SKILL.md generation** (Phase 6.5) — every generated CLI now ships with an AI-discoverable skill definition inside the Python package. ReplSkin auto-detects the skill file after `pip install`, and the REPL banner displays the absolute path for agents. Includes `skill_generator.py`, Jinja2 template, `package_data` in all setup.py files, and 51 new tests.
