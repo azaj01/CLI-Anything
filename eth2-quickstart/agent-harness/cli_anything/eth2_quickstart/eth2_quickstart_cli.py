@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import shlex
-import sys
+from typing import NoReturn
 
 import click
 
@@ -49,10 +49,9 @@ def backend_from_context(ctx: click.Context) -> Eth2QuickStartBackend:
         return Eth2QuickStartBackend(ctx.obj["repo_root"])
     except RuntimeError as exc:
         fail(str(exc), ctx.obj["as_json"])
-        raise AssertionError("unreachable")
 
 
-def fail(message: str, as_json: bool) -> None:
+def fail(message: str, as_json: bool) -> NoReturn:
     if as_json:
         click.echo(json.dumps({"error": message}))
     else:
