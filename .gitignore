@@ -51,6 +51,7 @@
 !/skill_generation/
 !/openclaw-skill/
 !/cli-hub-meta-skill/
+!/cli-hub/
 
 # Ignore cli-hub-skill (auto-generated, not tracked)
 /cli-hub-skill/
@@ -78,6 +79,9 @@
 !/novita/
 !/ollama/
 !/browser/
+!/seaclip/
+!/pm2/
+!/chromadb/
 !/musescore/
 !/krita/
 !/freecad/
@@ -132,6 +136,12 @@
 /ollama/.*
 /browser/*
 /browser/.*
+/seaclip/*
+/seaclip/.*
+/pm2/*
+/pm2/.*
+/chromadb/*
+/chromadb/.*
 /musescore/*
 /musescore/.*
 /krita/*
@@ -150,6 +160,8 @@
 /cloudcompare/.*
 /openscreen/*
 /openscreen/.*
+/cloudanalyzer/*
+/cloudanalyzer/.*
 /wiremock/*
 /wiremock/.*
 /exa/*
@@ -180,6 +192,9 @@
 !/novita/agent-harness/
 !/ollama/agent-harness/
 !/browser/agent-harness/
+!/seaclip/agent-harness/
+!/pm2/agent-harness/
+!/chromadb/agent-harness/
 !/musescore/agent-harness/
 !/krita/agent-harness/
 !/freecad/agent-harness/
@@ -190,6 +205,8 @@
 !/renderdoc/agent-harness/
 !/cloudcompare/agent-harness/
 !/openscreen/agent-harness/
+!/cloudanalyzer/
+!/cloudanalyzer/agent-harness/
 !/wiremock/
 !/wiremock/agent-harness/
 !/exa/agent-harness/
